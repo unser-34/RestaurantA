@@ -6,34 +6,38 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp
 {
+    public class Restaurant
+    {
+        public int id { get; set; };
+        public String name { get; set; };
+        public String type { get; set; };
+        public double rating { get; set; };
+
+        public Restaurant(int id, string name, string type, double rating)
+        {
+            this.id = id;
+            this.name = name;
+            this.type = type;
+            this.rating = rating;
+        }
+
+
+    }
     internal class Program
     {
         static void Main(string[] args)
         {
-            class Restaurant
-        {
-            public string Name { get; set; }
-            public string Location { get; set; }
-            public List<string> MenuItems { get; set; }
-            public Restaurant(string name, string location)
-            {
-                Name = name;
-                Location = location;
-                MenuItems = new List<string>();
-            }
-            public void AddMenuItem(string item)
-            {
-                MenuItems.Add(item);
-            }
-            public void DisplayMenu()
-            {
-                Console.WriteLine($"Menu for {Name} in {Location}:");
-                foreach (var item in MenuItems)
-                {
-                    Console.WriteLine($"- {item}");
-                }
-            }
+            new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
+            new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
+            new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7)
+
+
+
         }
-    }
-    }
+         foreach (var r in restaurants)
+            {
+                Console.WriteLine($"ID : {r.id} | Name : {r.name} | Type : {r.type} | Rating : {r.rating}");
+            }
+
+}
 }
